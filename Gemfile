@@ -13,6 +13,7 @@ gem 'therubyracer', platforms: :ruby
 gem 'jquery-rails', '4.0.5'
 
 group :development, :test do
+  gem 'rspec-rails','3.3.3'
   gem 'byebug', '6.0.2'
 end
 
