@@ -1,9 +1,23 @@
 require 'rails_helper'
 
-describe "the home page" do
+describe "the home page", :type => :feature do
   it "has the title 'Free to Play Hearthstone Tracker'" do
-    response = get "/"
+    visit "/home"
+    expect(page).to have_title("Free to Play Hearthstone Tracker")
+  end
 
-    expect(response.body.title).to eq("Free to Play Hearthstone Tracker")
+  it "sets the root to the home controller" do
+    visit "/"
+    expect(page).to have_title("Free to Play Hearthstone Tracker")
+  end
+
+  it "shows each user" do
+    visit "/"
+
+    omgrr = User.create(name: "omgrr", rank: 25)
+    bison = User.create(name: "bison", rank: 25)
+
+    expect(page).to have_selector(".user##{omgrr.id}")
+    expect(page).to have_selector(".user##{bison.id}")
   end
 end
