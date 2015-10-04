@@ -1,0 +1,79 @@
+.rank_25 {
+  height: 100px;
+  width: 85px;
+  background: url("hs_ranks.jpg") -160px -85px no-repeat;
+  border: 1px solid black;
+  size: 10%;
+}
+
+.rank_24 {
+  height: 100px;
+  width: 85px;
+  background: url("hs_ranks.jpg") -285px -85px no-repeat;
+  border: 1px solid black;
+  size: 10%;
+}
+
+.rank_23 {
+  height: 100px;
+  width: 85px;
+  background: url("hs_ranks.jpg") -410px -85px no-repeat;
+  border: 1px solid black;
+  size: 10%;
+}
+
+.rank_22 {
+  height: 100px;
+  width: 85px;
+  background: url("hs_ranks.jpg") -540px -85px no-repeat;
+  border: 1px solid black;
+  size: 10%;
+}
+
+.rank_21 {
+  height: 100px;
+  width: 85px;
+  background: url("hs_ranks.jpg") -670px -85px no-repeat;
+  border: 1px solid black;
+  size: 10%;
+}
+
+.rank_20 {
+  height: 100px;
+  width: 85px;
+  background: url("hs_ranks.jpg") -225px -177px no-repeat;
+  border: 1px solid black;
+  size: 10%;
+}
+
+.rank_19 {
+  height: 100px;
+  width: 85px;
+  background: url("hs_ranks.jpg") -350px -177px no-repeat;
+  border: 1px solid black;
+  size: 10%;
+}
+
+.rank_18 {
+  height: 100px;
+  width: 85px;
+  background: url("hs_ranks.jpg") -475px -177px no-repeat;
+  border: 1px solid black;
+  size: 10%;
+}
+
+.rank_17 {
+  height: 100px;
+  width: 85px;
+  background: url("hs_ranks.jpg") -605px -177px no-repeat;
+  border: 1px solid black;
+  size: 10%;
+}
+
+.rank_16 {
+  height: 100px;
+  width: 85px;
+  background: url("hs_ranks.jpg") -730px -177px no-repeat;
+  border: 1px solid black;
+  size: 10%;
+}
