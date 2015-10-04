@@ -17,3 +17,9 @@ Welcome to the home
     </dl>
   <% end %>
 </div>
+
+<div class="messages">
+  <% Message.all.each do |m| %>
+    <p><%= m.username%>: <%=m.body%></p>
+  <% end %>
+</div>
