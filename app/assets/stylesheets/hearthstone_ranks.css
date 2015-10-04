@@ -77,3 +77,11 @@
   border: 1px solid black;
   size: 10%;
 }
+
+.rank_15 {
+  height: 100px;
+  width: 85px;
+  background: url("hs_ranks.jpg") -160px -265px no-repeat;
+  border: 1px solid black;
+  size: 10%;
+}
