@@ -6,6 +6,8 @@ class UsersController < ApplicationController
   end
 
   def rank_down
+    user = User.find(params[:id]).rank_down
 
+    redirect_to home_path
   end
 end

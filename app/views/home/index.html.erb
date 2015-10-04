@@ -9,6 +9,10 @@ Welcome to the home
         <%= form_tag(rank_up_user_path(user)) do %>
           <%= submit_tag("Rank Up") %>
         <% end %>
+
+        <%= form_tag(rank_down_user_path(user)) do %>
+          <%= submit_tag("Rank Down") %>
+        <% end %>
       </div>
     </dl>
   <% end %>

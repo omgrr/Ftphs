@@ -33,7 +33,7 @@ describe "the home page", :type => :feature do
     expect(page).to have_selector(".user##{bison.id} .rank_25")
   end
 
-  it "lets you rank up your user" do
+  it "lets you rank up your user and displays the correct spite" do
     omgrr = User.create(name: "omgrr", rank: 20)
 
     visit "/"
@@ -43,5 +43,19 @@ describe "the home page", :type => :feature do
     end
 
     expect(omgrr.reload.rank).to eq(19)
+    expect(page).to have_selector(".user##{omgrr.id} .rank_19")
+  end
+
+  it "lets you rank down your user and displays the correct spite" do
+    omgrr = User.create(name: "omgrr", rank: 20)
+
+    visit "/"
+
+    within(".user##{omgrr.id}") do
+      click_button("Rank Down")
+    end
+
+    expect(omgrr.reload.rank).to eq(21)
+    expect(page).to have_selector(".user##{omgrr.id} .rank_21")
   end
 end
