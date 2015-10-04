@@ -28,8 +28,20 @@ describe "the home page", :type => :feature do
     visit "/"
 
     expect(find(".user##{omgrr.id}")).to have_content("omgrr")
-    expect(find(".user##{omgrr.id}")).to have_content("20")
+    expect(page).to have_selector(".user##{omgrr.id} .rank_20")
     expect(find(".user##{bison.id}")).to have_content("bison")
-    expect(find(".user##{bison.id}")).to have_content("25")
+    expect(page).to have_selector(".user##{bison.id} .rank_25")
+  end
+
+  it "lets you rank up your user" do
+    omgrr = User.create(name: "omgrr", rank: 20)
+
+    visit "/"
+
+    within(".user##{omgrr.id}") do
+      click_button("Rank Up")
+    end
+
+    expect(omgrr.reload.rank).to eq(19)
   end
 end

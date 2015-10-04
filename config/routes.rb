@@ -3,6 +3,13 @@ Rails.application.routes.draw do
   get "home" => "home#index"
 
   get "test/sprites" => "test#sprites"
+
+  resources :users, :only => [] do
+    member do
+      post "rank_up"
+      post "rank_down"
+    end
+  end
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

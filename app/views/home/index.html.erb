@@ -5,8 +5,11 @@ Welcome to the home
     <dl>
       <div class="user" id="<%= user.id %>">
         <dt><%= user.name %></dt>
-        <dd><%= user.rank %></dd>
+        <div class="rank_<%= user.rank %>"></div>
+        <%= form_tag(rank_up_user_path(user)) do %>
+          <%= submit_tag("Rank Up") %>
+        <% end %>
       </div>
-  </dl>
+    </dl>
   <% end %>
 </div>
