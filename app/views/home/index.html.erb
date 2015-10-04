@@ -1,1 +1,9 @@
 Welcome to the home
+
+<div class="users">
+  <% User.all.each do |user|  %>
+    <div class="user" id="<%= user.id %>">
+
+    </div>
+  <% end %>
+</div>

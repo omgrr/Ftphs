@@ -12,10 +12,10 @@ describe "the home page", :type => :feature do
   end
 
   it "shows each user" do
-    visit "/"
-
     omgrr = User.create(name: "omgrr", rank: 25)
     bison = User.create(name: "bison", rank: 25)
+
+    visit "/"
 
     expect(page).to have_selector(".user##{omgrr.id}")
     expect(page).to have_selector(".user##{bison.id}")
