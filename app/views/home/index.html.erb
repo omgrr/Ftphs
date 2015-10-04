@@ -6,12 +6,12 @@ Welcome to the home
       <div class="user" id="<%= user.id %>">
         <dt><%= user.name %></dt>
         <div class="rank_<%= user.rank %>"></div>
-        <%= form_tag(rank_up_user_path(user)) do %>
-          <%= submit_tag("Rank Up") %>
+        <%= form_tag(go_down_user_path(user)) do %>
+          <%= submit_tag("Go Down") %>
         <% end %>
 
-        <%= form_tag(rank_down_user_path(user)) do %>
-          <%= submit_tag("Rank Down") %>
+        <%= form_tag(go_up_user_path(user)) do %>
+          <%= submit_tag("Go Up") %>
         <% end %>
       </div>
     </dl>

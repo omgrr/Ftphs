@@ -1,12 +1,12 @@
 class UsersController < ApplicationController
-  def rank_up
-    user = User.find(params[:id]).rank_up
+  def go_down
+    user = User.find(params[:id]).go_down
 
     redirect_to home_path
   end
 
-  def rank_down
-    user = User.find(params[:id]).rank_down
+  def go_up
+    user = User.find(params[:id]).go_up
 
     redirect_to home_path
   end

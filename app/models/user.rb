@@ -1,9 +1,9 @@
 class User < ActiveRecord::Base
-  def rank_up
+  def go_down
     self.update(rank: self.rank -= 1)
   end
 
-  def rank_down
+  def go_up
     self.update(rank: self.rank += 1)
   end
 end

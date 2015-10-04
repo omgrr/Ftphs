@@ -6,8 +6,8 @@ Rails.application.routes.draw do
 
   resources :users, :only => [] do
     member do
-      post "rank_up"
-      post "rank_down"
+      post "go_up"
+      post "go_down"
     end
   end
   # Example of regular route:
