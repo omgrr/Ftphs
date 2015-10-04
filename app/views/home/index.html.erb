@@ -2,8 +2,11 @@ Welcome to the home
 
 <div class="users">
   <% User.all.each do |user|  %>
-    <div class="user" id="<%= user.id %>">
-
-    </div>
+    <dl>
+      <div class="user" id="<%= user.id %>">
+        <dt><%= user.name %></dt>
+        <dd><%= user.rank %></dd>
+      </div>
+  </dl>
   <% end %>
 </div>
