@@ -1,0 +1,16 @@
+<div class="user row" id="<%= user.id %>">
+  <div class="col-md-2">
+    <h4><%= user.name %></h4>
+
+    <%= form_tag(go_down_user_path(user)) do %>
+      <%= submit_tag("Go Down", class: "btn") %>
+    <% end %>
+
+    <%= form_tag(go_up_user_path(user)) do %>
+      <%= submit_tag("Go Up", class:"btn") %>
+    <% end %>
+  </div>
+  <div class="col-md-10">
+    <div class="rank_<%= user.rank %>"></div>
+  </div>
+</div>

@@ -1,22 +1,10 @@
-<div class="users">
+<div class="users col-md-10">
   <% User.all.each do |user|  %>
-    <dl>
-      <div class="user" id="<%= user.id %>">
-        <dt><%= user.name %></dt>
-        <div class="rank_<%= user.rank %>"></div>
-        <%= form_tag(go_down_user_path(user)) do %>
-          <%= submit_tag("Go Down", class: "btn") %>
-        <% end %>
-
-        <%= form_tag(go_up_user_path(user)) do %>
-          <%= submit_tag("Go Up", class:"btn") %>
-        <% end %>
-      </div>
-    </dl>
+    <%= render "user", user: user %>
   <% end %>
 </div>
 
-<div class="messages">
+<div class="messages col-md-2">
   <% Message.all.each do |m| %>
     <p><%= m.username%>: <%=m.body%></p>
   <% end %>
