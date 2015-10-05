@@ -33,29 +33,45 @@ describe "users", :type => :feature do
     expect(page).to have_selector(".user##{bison.id} .rank_25")
   end
 
-  it "lets you 'go down' and displays the correct spite" do
-    omgrr = User.create(name: "omgrr", rank: 20)
+  describe "ranks" do
+    it "lets you 'go down' and displays the correct spite" do
+      omgrr = User.create(name: "omgrr", rank: 20)
 
-    visit "/"
+      visit "/"
 
-    within(".user##{omgrr.id}") do
-      click_button("Go Down")
+      within(".user##{omgrr.id}") do
+        click_button("Go Down")
+      end
+
+      expect(omgrr.reload.rank).to eq(19)
+      expect(page).to have_selector(".user##{omgrr.id} .rank_19")
     end
 
-    expect(omgrr.reload.rank).to eq(19)
-    expect(page).to have_selector(".user##{omgrr.id} .rank_19")
-  end
+    it "lets you 'go up' and displays the correct spite" do
+      omgrr = User.create(name: "omgrr", rank: 20)
 
-  it "lets you 'go up' and displays the correct spite" do
-    omgrr = User.create(name: "omgrr", rank: 20)
+      visit "/"
 
-    visit "/"
+      within(".user##{omgrr.id}") do
+        click_button("Go Up")
+      end
 
-    within(".user##{omgrr.id}") do
-      click_button("Go Up")
+      expect(omgrr.reload.rank).to eq(21)
+      expect(page).to have_selector(".user##{omgrr.id} .rank_21")
     end
 
-    expect(omgrr.reload.rank).to eq(21)
-    expect(page).to have_selector(".user##{omgrr.id} .rank_21")
+    it "displays a message when you try to go past rank 25" do
+      omgrr = User.create(name: "omgrr", rank: 25)
+
+      visit "/"
+
+
+      within(".user##{omgrr.id}") do
+        click_button("Go Up")
+      end
+
+      expect(omgrr.reload.rank).to eq(25)
+      expect(page).to have_content("Rank cannot go above 25")
+    end
   end
 end
