@@ -1,7 +1,7 @@
 .rank_25 {
   height: 100px;
   width: 85px;
-  background: url("hs_ranks.jpg") -160px -85px no-repeat;
+  background: url("hs_ranks.jpg") -164px -85px no-repeat;
   border: 1px solid black;
   size: 10%;
 }
@@ -9,7 +9,7 @@
 .rank_24 {
   height: 100px;
   width: 85px;
-  background: url("hs_ranks.jpg") -285px -85px no-repeat;
+  background: url("hs_ranks.jpg") -288px -85px no-repeat;
   border: 1px solid black;
   size: 10%;
 }
@@ -17,7 +17,7 @@
 .rank_23 {
   height: 100px;
   width: 85px;
-  background: url("hs_ranks.jpg") -410px -85px no-repeat;
+  background: url("hs_ranks.jpg") -414px -85px no-repeat;
   border: 1px solid black;
   size: 10%;
 }
@@ -25,7 +25,7 @@
 .rank_22 {
   height: 100px;
   width: 85px;
-  background: url("hs_ranks.jpg") -540px -85px no-repeat;
+  background: url("hs_ranks.jpg") -542px -85px no-repeat;
   border: 1px solid black;
   size: 10%;
 }
@@ -33,7 +33,7 @@
 .rank_21 {
   height: 100px;
   width: 85px;
-  background: url("hs_ranks.jpg") -670px -85px no-repeat;
+  background: url("hs_ranks.jpg") -674px -85px no-repeat;
   border: 1px solid black;
   size: 10%;
 }
@@ -57,7 +57,7 @@
 .rank_18 {
   height: 100px;
   width: 85px;
-  background: url("hs_ranks.jpg") -475px -177px no-repeat;
+  background: url("hs_ranks.jpg") -477px -177px no-repeat;
   border: 1px solid black;
   size: 10%;
 }
@@ -65,7 +65,7 @@
 .rank_17 {
   height: 100px;
   width: 85px;
-  background: url("hs_ranks.jpg") -605px -177px no-repeat;
+  background: url("hs_ranks.jpg") -607px -177px no-repeat;
   border: 1px solid black;
   size: 10%;
 }
@@ -73,7 +73,7 @@
 .rank_16 {
   height: 100px;
   width: 85px;
-  background: url("hs_ranks.jpg") -730px -177px no-repeat;
+  background: url("hs_ranks.jpg") -733px -177px no-repeat;
   border: 1px solid black;
   size: 10%;
 }
@@ -81,7 +81,7 @@
 .rank_15 {
   height: 100px;
   width: 85px;
-  background: url("hs_ranks.jpg") -160px -265px no-repeat;
+  background: url("hs_ranks.jpg") -164px -265px no-repeat;
   border: 1px solid black;
   size: 10%;
 }
@@ -90,6 +90,110 @@
   height: 100px;
   width: 85px;
   background: url("hs_ranks.jpg") -288px -265px no-repeat;
+  border: 1px solid black;
+  size: 10%;
+}
+
+.rank_13 {
+  height: 100px;
+  width: 85px;
+  background: url("hs_ranks.jpg") -415px -265px no-repeat;
+  border: 1px solid black;
+  size: 10%;
+}
+
+.rank_12 {
+  height: 100px;
+  width: 85px;
+  background: url("hs_ranks.jpg") -542px -265px no-repeat;
+  border: 1px solid black;
+  size: 10%;
+}
+
+.rank_11 {
+  height: 100px;
+  width: 85px;
+  background: url("hs_ranks.jpg") -676px -265px no-repeat;
+  border: 1px solid black;
+  size: 10%;
+}
+
+.rank_10 {
+  height: 100px;
+  width: 85px;
+  background: url("hs_ranks.jpg") -227px -348px no-repeat;
+  border: 1px solid black;
+  size: 10%;
+}
+
+.rank_9 {
+  height: 100px;
+  width: 85px;
+  background: url("hs_ranks.jpg") -351px -347px no-repeat;
+  border: 1px solid black;
+  size: 10%;
+}
+
+.rank_8 {
+  height: 100px;
+  width: 85px;
+  background: url("hs_ranks.jpg") -476px -347px no-repeat;
+  border: 1px solid black;
+  size: 10%;
+}
+
+.rank_7 {
+  height: 100px;
+  width: 85px;
+  background: url("hs_ranks.jpg") -607px -347px no-repeat;
+  border: 1px solid black;
+  size: 10%;
+}
+
+.rank_6 {
+  height: 100px;
+  width: 85px;
+  background: url("hs_ranks.jpg") -734px -345px no-repeat;
+  border: 1px solid black;
+  size: 10%;
+}
+
+.rank_5 {
+  height: 100px;
+  width: 85px;
+  background: url("hs_ranks.jpg") -165px -433px no-repeat;
+  border: 1px solid black;
+  size: 10%;
+}
+
+.rank_4 {
+  height: 100px;
+  width: 85px;
+  background: url("hs_ranks.jpg") -289px -432px no-repeat;
+  border: 1px solid black;
+  size: 10%;
+}
+
+.rank_3 {
+  height: 100px;
+  width: 85px;
+  background: url("hs_ranks.jpg") -414px -432px no-repeat;
+  border: 1px solid black;
+  size: 10%;
+}
+
+.rank_2 {
+  height: 100px;
+  width: 85px;
+  background: url("hs_ranks.jpg") -541px -433px no-repeat;
+  border: 1px solid black;
+  size: 10%;
+}
+
+.rank_1 {
+  height: 100px;
+  width: 85px;
+  background: url("hs_ranks.jpg") -676px -436px no-repeat;
   border: 1px solid black;
   size: 10%;
 }
