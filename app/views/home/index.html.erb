@@ -1,5 +1,3 @@
-Welcome to the home
-
 <div class="users">
   <% User.all.each do |user|  %>
     <dl>
@@ -7,11 +5,11 @@ Welcome to the home
         <dt><%= user.name %></dt>
         <div class="rank_<%= user.rank %>"></div>
         <%= form_tag(go_down_user_path(user)) do %>
-          <%= submit_tag("Go Down") %>
+          <%= submit_tag("Go Down", class: "btn") %>
         <% end %>
 
         <%= form_tag(go_up_user_path(user)) do %>
-          <%= submit_tag("Go Up") %>
+          <%= submit_tag("Go Up", class:"btn") %>
         <% end %>
       </div>
     </dl>
