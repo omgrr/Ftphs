@@ -10,4 +10,16 @@ describe "the home page", :type => :feature do
     visit "/"
     expect(page).to have_title("Free to Play Hearthstone Tracker")
   end
+
+  context "when your not logged in" do
+    it "has a 'New User' link" do
+      visit "/"
+      expect(page).to have_link("Log In")
+    end
+
+    it "has a 'Log In' link" do
+      visit "/"
+      expect(page).to have_link("New User")
+    end
+  end
 end
