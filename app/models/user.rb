@@ -3,6 +3,10 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
+  after_initialize do
+    self.rank = 25 if self.new_record?
+  end
+
   validate :_rank_above_25, :_rank_below_1
 
   def go_down
