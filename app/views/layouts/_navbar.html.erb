@@ -8,8 +8,12 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li class><%= link_to("Log In", new_user_session_path) %></li>
-        <li class><%= link_to("New User", new_user_registration_path) %></li>
+        <% if user_signed_in? %>
+          <li class><%= link_to("Log Out", destroy_user_session_path, method: "delete") %></li>
+        <% else %>
+          <li class><%= link_to("Log In", new_user_session_path) %></li>
+          <li class><%= link_to("New User", new_user_registration_path) %></li>
+        <% end %>
       </ul>
     </div>
   </div>
