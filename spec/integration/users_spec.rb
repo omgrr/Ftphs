@@ -73,5 +73,40 @@ describe "users", :type => :feature do
       expect(omgrr.reload.rank).to eq(25)
       expect(page).to have_content("Rank cannot go above 25")
     end
+
+    it "shows a progress bar based on the rank" do
+      omgrr = User.create(name: "omgrr", rank: 25)
+
+      visit "/"
+
+      within(".user##{omgrr.id}") do
+        expect(page).to have_selector(".progress-bar")
+      end
+    end
+
+    it "fills the progres bar by 4% when you go down a rank" do
+      omgrr = User.create(name: "omgrr", rank: 24)
+
+      visit "/"
+
+      expect(page).to have_css('.progress-bar[aria_valuenow="4"]')
+
+      click_button("Go Down")
+
+      expect(page).to have_selector('.progress-bar[aria_valuenow="8"]')
+
+    end
+
+    it "shrinks the progres bar by 4% when you go up a rank" do
+      omgrr = User.create(name: "omgrr", rank: 24)
+
+      visit "/"
+
+      expect(page).to have_css('.progress-bar[aria_valuenow="4"]')
+
+      click_button("Go Up")
+
+      expect(page).to have_selector('.progress-bar[aria_valuenow="0"]')
+    end
   end
 end

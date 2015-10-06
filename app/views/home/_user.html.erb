@@ -10,7 +10,14 @@
       <%= submit_tag("Go Up", class:"btn") %>
     <% end %>
   </div>
-  <div class="col-md-10">
+  <div class="col-md-2">
     <div class="rank_<%= user.rank %>"></div>
+  </div>
+  <div class="progress">
+    <div class="progress-bar" role="progressbar"
+      aria_valuenow = "<%= 100 - user.rank*4 %>"
+      aria_valuemin = "0"
+      aria_valuemax = "100"
+      style ="width: <%= 100 - user.rank*4 %>%;"></div>
   </div>
 </div>
