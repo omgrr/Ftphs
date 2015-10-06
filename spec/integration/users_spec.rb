@@ -12,18 +12,18 @@ describe "users", :type => :feature do
   end
 
   it "shows each user" do
-    omgrr = User.create(name: "omgrr", rank: 25)
-    bison = User.create(name: "bison", rank: 25)
+    omgrr = User.create(name: "omgrr", email: "omgrr@ftp.com", password: "password123")
+    bison = User.create(name: "bison", email: "bison@ftp.com", password: "password123")
 
     visit "/"
-
     expect(page).to have_selector(".user##{omgrr.id}")
     expect(page).to have_selector(".user##{bison.id}")
   end
 
   it "displays the users name and rank" do
-    omgrr = User.create(name: "omgrr", rank: 20)
-    bison = User.create(name: "bison", rank: 25)
+    omgrr = User.create(name: "omgrr", email: "omgrr@ftp.com", password: "password123")
+    bison = User.create(name: "bison", email: "bison@ftp.com", password: "password123")
+    omgrr.update_attributes(rank: 20)
 
     visit "/"
 
@@ -35,7 +35,8 @@ describe "users", :type => :feature do
 
   describe "ranks" do
     it "lets you 'go down' and displays the correct spite" do
-      omgrr = User.create(name: "omgrr", rank: 20)
+      omgrr = User.create(name: "omgrr", email: "omgrr@ftp.com", password: "password123")
+      omgrr.update_attributes(rank: 20)
 
       visit "/"
 
@@ -48,7 +49,8 @@ describe "users", :type => :feature do
     end
 
     it "lets you 'go up' and displays the correct spite" do
-      omgrr = User.create(name: "omgrr", rank: 20)
+      omgrr = User.create(name: "omgrr", email: "omgrr@ftp.com", password: "password123")
+      omgrr.update_attributes(rank: 20)
 
       visit "/"
 
@@ -61,7 +63,7 @@ describe "users", :type => :feature do
     end
 
     it "displays a message when you try to go past rank 25" do
-      omgrr = User.create(name: "omgrr", rank: 25)
+      omgrr = User.create(name: "omgrr", email: "omgrr@ftp.com", password: "password123")
 
       visit "/"
 
@@ -75,7 +77,7 @@ describe "users", :type => :feature do
     end
 
     it "shows a progress bar based on the rank" do
-      omgrr = User.create(name: "omgrr", rank: 25)
+      omgrr = User.create(name: "omgrr", email: "omgrr@ftp.com", password: "password123")
 
       visit "/"
 
@@ -85,8 +87,8 @@ describe "users", :type => :feature do
     end
 
     it "fills the progres bar by 4% when you go down a rank" do
-      omgrr = User.create(name: "omgrr", rank: 24)
-
+      omgrr = User.create(name: "omgrr", email: "omgrr@ftp.com", password: "password123")
+      omgrr.update_attributes(rank: 24)
       visit "/"
 
       expect(page).to have_css('.progress-bar[aria_valuenow="4"]')
@@ -98,7 +100,8 @@ describe "users", :type => :feature do
     end
 
     it "shrinks the progres bar by 4% when you go up a rank" do
-      omgrr = User.create(name: "omgrr", rank: 24)
+      omgrr = User.create(name: "omgrr", email: "omgrr@ftp.com", password: "password123")
+      omgrr.update_attributes(rank: 24)
 
       visit "/"
 

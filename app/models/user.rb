@@ -1,4 +1,13 @@
 class User < ActiveRecord::Base
+  # Include default devise modules. Others available are:
+  # :confirmable, :lockable, :timeoutable and :omniauthable
+  devise :database_authenticatable, :registerable,
+         :recoverable, :rememberable, :trackable, :validatable
+  after_initialize do
+    self.rank = 25 if self.new_record?
+  end
+
+  validates :name, presence: true, uniqueness: true
   validate :_rank_above_25, :_rank_below_1
 
   def go_down
