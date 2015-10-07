@@ -123,15 +123,5 @@ describe "users", :type => :feature do
         expect(page).to_not have_link("Go Down")
       end
     end
-
-    it "won't let you rank down or up other users" do
-        omgrr = User.create(name: "omgrr", email: "omgrr@ftp.com", password: "password123")
-        bison = User.create(name: "omgrr", email: "omgrr@ftp.com", password: "password123")
-        sign_in(bison)
-
-        post "/users/#{omgrr.id}/go_up"
-
-        expect(response).to eq(401)
-    end
   end
 end

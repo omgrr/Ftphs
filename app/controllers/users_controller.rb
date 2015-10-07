@@ -1,27 +1,38 @@
 class UsersController < ApplicationController
   def go_down
     user = User.find(params[:id])
-    user.go_down
 
-    if user.valid?
-      flash[:success] = "Rank down"
+    if user != current_user
+      redirect_to(home_path, status: :unauthorized)
     else
-      flash[:error] = user.errors.full_messages.join("\n")
+      user.go_down
+
+      if user.valid? and current_user == user
+        flash[:success] = "Rank down"
+      else
+        flash[:error] = user.errors.full_messages.join("\n")
+      end
+
+      redirect_to home_path
     end
 
-    redirect_to home_path
   end
 
   def go_up
     user = User.find(params[:id])
-    user.go_up
 
-    if user.valid?
-      flash[:success] = "Rank up"
+    if user != current_user
+      redirect_to(home_path, status: :unauthorized)
     else
-      flash[:error] = user.errors.full_messages.join("\n")
-    end
+      user.go_up
 
-    redirect_to home_path
+      if user.valid? and current_user == user
+        flash[:success] = "Rank up"
+      else
+        flash[:error] = user.errors.full_messages.join("\n")
+      end
+
+      redirect_to home_path
+    end
   end
 end
