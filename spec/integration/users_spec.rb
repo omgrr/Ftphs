@@ -34,82 +34,104 @@ describe "users", :type => :feature do
   end
 
   describe "ranks" do
-    it "lets you 'go down' and displays the correct spite" do
-      omgrr = User.create(name: "omgrr", email: "omgrr@ftp.com", password: "password123")
-      omgrr.update_attributes(rank: 20)
+    context "when you are logged in" do
+      before do
+        @omgrr = User.create(name: "omgrr", email: "omgrr@ftp.com", password: "password123")
+        @omgrr.update_attributes(rank: 20)
+        sign_in(@omgrr)
+      end
 
-      visit "/"
+      it "lets you 'go down' and displays the correct spite" do
+        within(".user##{@omgrr.id}") do
+          click_button("Go Down")
+        end
 
-      within(".user##{omgrr.id}") do
+        expect(@omgrr.reload.rank).to eq(19)
+        expect(page).to have_selector(".user##{@omgrr.id} .rank_19")
+      end
+
+      it "lets you 'go up' and displays the correct spite" do
+        within(".user##{@omgrr.id}") do
+          click_button("Go Up")
+        end
+
+        expect(@omgrr.reload.rank).to eq(21)
+        expect(page).to have_selector(".user##{@omgrr.id} .rank_21")
+      end
+
+      it "displays a message when you try to go past rank 25" do
+        @omgrr.update_attributes(rank: 25)
+
+        within(".user##{@omgrr.id}") do
+          click_button("Go Up")
+        end
+
+        expect(@omgrr.reload.rank).to eq(25)
+        expect(page).to have_content("Rank cannot go above 25")
+      end
+
+      it "displays a message when you try to go past rank 25" do
+        @omgrr.update_attributes(rank: 1)
+        within(".user##{@omgrr.id}") do
+          click_button("Go Down")
+        end
+
+        expect(@omgrr.reload.rank).to eq(1)
+        expect(page).to have_content("Rank cannot go below 1")
+      end
+
+      it "shows a progress bar based on the rank" do
+        within(".user##{@omgrr.id}") do
+          expect(page).to have_selector(".progress-bar")
+        end
+      end
+
+      it "fills the progres bar by 4% when you go down a rank" do
+        @omgrr.update_attributes(rank: 24)
+        visit "/"
+
+        expect(page).to have_css('.progress-bar[aria_valuenow="4"]')
+
         click_button("Go Down")
+
+        expect(page).to have_selector('.progress-bar[aria_valuenow="8"]')
+
       end
 
-      expect(omgrr.reload.rank).to eq(19)
-      expect(page).to have_selector(".user##{omgrr.id} .rank_19")
-    end
+      it "shrinks the progres bar by 4% when you go up a rank" do
+        @omgrr.update_attributes(rank: 24)
+        visit "/"
 
-    it "lets you 'go up' and displays the correct spite" do
-      omgrr = User.create(name: "omgrr", email: "omgrr@ftp.com", password: "password123")
-      omgrr.update_attributes(rank: 20)
+        expect(page).to have_css('.progress-bar[aria_valuenow="4"]')
 
-      visit "/"
-
-      within(".user##{omgrr.id}") do
         click_button("Go Up")
-      end
 
-      expect(omgrr.reload.rank).to eq(21)
-      expect(page).to have_selector(".user##{omgrr.id} .rank_21")
-    end
-
-    it "displays a message when you try to go past rank 25" do
-      omgrr = User.create(name: "omgrr", email: "omgrr@ftp.com", password: "password123")
-
-      visit "/"
-
-
-      within(".user##{omgrr.id}") do
-        click_button("Go Up")
-      end
-
-      expect(omgrr.reload.rank).to eq(25)
-      expect(page).to have_content("Rank cannot go above 25")
-    end
-
-    it "shows a progress bar based on the rank" do
-      omgrr = User.create(name: "omgrr", email: "omgrr@ftp.com", password: "password123")
-
-      visit "/"
-
-      within(".user##{omgrr.id}") do
-        expect(page).to have_selector(".progress-bar")
+        expect(page).to have_selector('.progress-bar[aria_valuenow="0"]')
       end
     end
 
-    it "fills the progres bar by 4% when you go down a rank" do
-      omgrr = User.create(name: "omgrr", email: "omgrr@ftp.com", password: "password123")
-      omgrr.update_attributes(rank: 24)
-      visit "/"
+    context "when you are not logged in" do
+      before do
+        @omgrr = User.create(name: "omgrr", email: "omgrr@ftp.com", password: "password123")
+        @omgrr.update_attributes(rank: 20)
+      end
 
-      expect(page).to have_css('.progress-bar[aria_valuenow="4"]')
+      it "has no rank buttons" do
+        visit "/"
 
-      click_button("Go Down")
-
-      expect(page).to have_selector('.progress-bar[aria_valuenow="8"]')
-
+        expect(page).to_not have_button("Go Up")
+        expect(page).to_not have_link("Go Down")
+      end
     end
 
-    it "shrinks the progres bar by 4% when you go up a rank" do
-      omgrr = User.create(name: "omgrr", email: "omgrr@ftp.com", password: "password123")
-      omgrr.update_attributes(rank: 24)
+    it "won't let you rank down or up other users" do
+        omgrr = User.create(name: "omgrr", email: "omgrr@ftp.com", password: "password123")
+        bison = User.create(name: "omgrr", email: "omgrr@ftp.com", password: "password123")
+        sign_in(bison)
 
-      visit "/"
+        post "/users/#{omgrr.id}/go_up"
 
-      expect(page).to have_css('.progress-bar[aria_valuenow="4"]')
-
-      click_button("Go Up")
-
-      expect(page).to have_selector('.progress-bar[aria_valuenow="0"]')
+        expect(response).to eq(401)
     end
   end
 end
