@@ -59,6 +59,17 @@ describe "users", :type => :feature do
         expect(page).to have_selector(".user##{@omgrr.id} .rank_21")
       end
 
+      it "doesn't show other users rank up and down buttons" do
+        bison = User.create(name: "bison", email: "bison@ftp.com", password: "password123")
+
+        visit "/"
+
+        within(".user##{bison.id}") do
+          expect(page).to_not have_button("Go Up")
+          expect(page).to_not have_button("Go Down")
+        end
+      end
+
       it "displays a message when you try to go past rank 25" do
         @omgrr.update_attributes(rank: 25)
 

@@ -2,7 +2,7 @@
   <div class="col-md-2">
     <h4><%= user.name %></h4>
 
-    <% if user_signed_in? %>
+    <% if user_signed_in? and current_user == user %>
       <%= form_tag(go_down_user_path(user)) do %>
         <%= submit_tag("Go Down", class: "btn") %>
       <% end %>
