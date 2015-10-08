@@ -11,6 +11,10 @@ Rails.application.routes.draw do
       post "go_down"
     end
   end
+
+  resources :messages, :only => [:create]
+
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
