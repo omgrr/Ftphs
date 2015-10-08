@@ -8,22 +8,21 @@ describe "messages", :type => :feature do
     end
 
     it "shows all of the posted messages" do
-      [1,2,3].each do |i|
+      [1,2].each do |i|
         Message.create(username: "omgrr", body: "Hello #{i}")
       end
 
       visit "/"
 
-      expect(page).to have_content("omgrr: Hello 1")
-      expect(page).to have_content("omgrr: Hello 2")
-      expect(page).to have_content("omgrr: Hello 3")
+      expect(page).to have_content("Hello 1")
+      expect(page).to have_content("Hello 2")
     end
 
     it "lets you post messages" do
       page.find("textarea#message").set("Hello world 1")
       click_button("Submit")
 
-      expect(page).to have_content("omgrr: Hello world 1")
+      expect(page).to have_content("Hello world 1")
     end
   end
 
@@ -36,9 +35,9 @@ describe "messages", :type => :feature do
 
       visit "/"
 
-      expect(page).to_not have_content("omgrr: Hello 1")
-      expect(page).to_not have_content("omgrr: Hello 2")
-      expect(page).to_not have_content("omgrr: Hello 3")
+      expect(page).to_not have_content("Hello 1")
+      expect(page).to_not have_content("Hello 2")
+      expect(page).to_not have_content("Hello 3")
       expect(page).to_not have_selector("#message_form")
     end
   end
