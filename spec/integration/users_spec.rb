@@ -20,6 +20,22 @@ describe "users", :type => :feature do
     expect(page).to have_selector(".user##{bison.id}")
   end
 
+  it "shows each user" do
+    bison = User.create(name: "bison", email: "bison@ftp.com", password: "password123")
+    kevias = User.create(name: "kevias", email: "kevias@ftp.com", password: "password123")
+    omgrr = User.create(name: "omgrr", email: "omgrr@ftp.com", password: "password123")
+
+    omgrr.update_attributes(rank: 1)
+    bison.update_attributes(rank: 2)
+    kevias.update_attributes(rank: 3)
+
+    visit "/"
+
+    expect(page).to have_selector(".user:first-child h4", text: "omgrr")
+    expect(page).to have_selector(".user:nth-last-child(2) h4", text: "bison")
+    expect(page).to have_selector(".user:last-child h4", text: "kevias")
+  end
+
   it "displays the users name and rank" do
     omgrr = User.create(name: "omgrr", email: "omgrr@ftp.com", password: "password123")
     bison = User.create(name: "bison", email: "bison@ftp.com", password: "password123")

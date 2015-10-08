@@ -1,5 +1,5 @@
 <div class="users col-md-8">
-  <% User.all.each do |user|  %>
+  <% User.all.order(rank: :asc).each do |user|  %>
     <%= render "user", user: user %>
   <% end %>
 </div>
