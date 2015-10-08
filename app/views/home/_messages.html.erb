@@ -1,0 +1,14 @@
+<div class="messages col-md-4">
+  <div class="message-pane">
+    <% Message.all.each do |m| %>
+      <div class="alert alert-info">
+        <p><%= m.username%>: <%=m.body%></p>
+      </div>
+    <% end %>
+  </div>
+
+    <%= form_tag(messages_path, id: "message_form") do %>
+      <%= text_area_tag(:message, "", id: "message") %>
+      <%= submit_tag("Submit") %>
+    <% end %>
+</div>

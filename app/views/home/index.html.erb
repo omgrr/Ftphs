@@ -1,19 +1,9 @@
-<div class="users col-md-10">
+<div class="users col-md-8">
   <% User.all.each do |user|  %>
     <%= render "user", user: user %>
   <% end %>
 </div>
 
 <% if current_user %>
-  <div class="messages col-md-2">
-    <% Message.all.each do |m| %>
-      <p><%= m.username%>: <%=m.body%></p>
-    <% end %>
-
-      <%= form_tag(messages_path, id: "message_form") do %>
-        <%= text_area_tag(:message, "", id: "message") %>
-        <%= submit_tag("Submit") %>
-      <% end %>
-
-  </div>
+  <%= render partial: "messages" %>
 <% end %>
