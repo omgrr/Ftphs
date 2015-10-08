@@ -23,6 +23,7 @@ test:
   password: ENV["test_password"]
 
 production:
-  <<: *default
-  database: db/production.sqlite3
-  password: ENV["prod_password"]
+  adapter: postgresql 
+  database: ftphs_production
+  pool: 5
+  timeout: 5000
