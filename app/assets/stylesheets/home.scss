@@ -1,0 +1,22 @@
+.message-pane{
+  height:500px;
+  overflow-y: scroll;
+}
+
+body {
+  background: image_url("hs_background.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.progress {
+  background-color: transparent;
+  margin-top: 15px;
+  height: 50px;
+}
+
+h4 {
+  color: white;
+}
