@@ -23,7 +23,7 @@ test:
   password: ENV["test_password"]
 
 production:
-  adapter: postgresql 
+  adapter: postgresql
   database: ftphs_production
   pool: 5
   timeout: 5000
