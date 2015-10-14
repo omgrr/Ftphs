@@ -1,6 +1,6 @@
 <div class="user row" id="<%= user.id %>">
-  <div class="col-md-2">
-    <h4><%= user.name %></h4>
+  <div class="user-portrait col-md-2">
+    <h4 class="text-center"><%= user.name %></h4>
 
     <% if user_signed_in? and current_user == user %>
       <%= form_tag(go_down_user_path(user)) do %>
