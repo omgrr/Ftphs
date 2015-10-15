@@ -17,8 +17,13 @@ body {
   height: 50px;
 }
 
+.user {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
 .user-portrait {
-  background-color: #337ab7;
+  background-color: rgba(226, 194, 107, 0.8);
   padding: 15px;
   border-radius: 4px;
 }

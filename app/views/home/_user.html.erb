@@ -1,21 +1,23 @@
 <div class="user row" id="<%= user.id %>">
-  <div class="user-portrait col-md-2">
-    <h4 class="text-center"><%= user.name %></h4>
+  <div class="user-portrait col-md-4">
+    <div class="col-md-6">
+      <h4 class="text-center"><%= user.name %></h4>
 
-    <% if user_signed_in? and current_user == user %>
-      <%= form_tag(go_down_user_path(user)) do %>
-        <%= submit_tag("Go Down", class: "btn") %>
-      <% end %>
+      <% if user_signed_in? and current_user == user %>
+        <%= form_tag(go_down_user_path(user)) do %>
+          <%= submit_tag("Go Down", class: "btn") %>
+        <% end %>
 
-      <%= form_tag(go_up_user_path(user)) do %>
-        <%= submit_tag("Go Up", class:"btn") %>
+        <%= form_tag(go_up_user_path(user)) do %>
+          <%= submit_tag("Go Up", class:"btn") %>
+        <% end %>
       <% end %>
-    <% end %>
+    </div>
+    <div class="col-md-6">
+      <div class="rank_<%= user.rank %>"></div>
+    </div>
   </div>
-  <div class="col-md-2">
-    <div class="rank_<%= user.rank %>"></div>
-  </div>
-  <div class="progress">
+  <div class="progress col-md-8">
     <div class="progress-bar" role="progressbar"
       aria_valuenow = "<%= 100 - user.rank*4 %>"
       aria_valuemin = "0"
