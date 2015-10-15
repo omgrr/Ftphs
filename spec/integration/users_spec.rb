@@ -58,18 +58,14 @@ describe "users", :type => :feature do
       end
 
       it "lets you 'go down' and displays the correct spite" do
-        within(".user##{@omgrr.id}") do
-          click_button("Go Down")
-        end
+        click_button("#{@omgrr.id}-go-down")
 
         expect(@omgrr.reload.rank).to eq(19)
         expect(page).to have_selector(".user##{@omgrr.id} .rank_19")
       end
 
       it "lets you 'go up' and displays the correct spite" do
-        within(".user##{@omgrr.id}") do
-          click_button("Go Up")
-        end
+        click_button("#{@omgrr.id}-go-up")
 
         expect(@omgrr.reload.rank).to eq(21)
         expect(page).to have_selector(".user##{@omgrr.id} .rank_21")
@@ -81,17 +77,15 @@ describe "users", :type => :feature do
         visit "/"
 
         within(".user##{bison.id}") do
-          expect(page).to_not have_button("Go Up")
-          expect(page).to_not have_button("Go Down")
+          expect(page).to_not have_button("#{bison.id}-go-up")
+          expect(page).to_not have_button("#{bison.id}-go-down")
         end
       end
 
       it "displays a message when you try to go past rank 25" do
         @omgrr.update_attributes(rank: 25)
 
-        within(".user##{@omgrr.id}") do
-          click_button("Go Up")
-        end
+        click_button("#{@omgrr.id}-go-up")
 
         expect(@omgrr.reload.rank).to eq(25)
         expect(page).to have_content("Rank cannot go above 25")
@@ -99,9 +93,7 @@ describe "users", :type => :feature do
 
       it "displays a message when you try to go past rank 25" do
         @omgrr.update_attributes(rank: 1)
-        within(".user##{@omgrr.id}") do
-          click_button("Go Down")
-        end
+        click_button("#{@omgrr.id}-go-down")
 
         expect(@omgrr.reload.rank).to eq(1)
         expect(page).to have_content("Rank cannot go below 1")
@@ -119,7 +111,7 @@ describe "users", :type => :feature do
 
         expect(page).to have_css('.progress-bar[aria_valuenow="4"]')
 
-        click_button("Go Down")
+        click_button("#{@omgrr.id}-go-down")
 
         expect(page).to have_selector('.progress-bar[aria_valuenow="8"]')
 
@@ -131,7 +123,7 @@ describe "users", :type => :feature do
 
         expect(page).to have_css('.progress-bar[aria_valuenow="4"]')
 
-        click_button("Go Up")
+        click_button("#{@omgrr.id}-go-up")
 
         expect(page).to have_selector('.progress-bar[aria_valuenow="0"]')
       end
@@ -146,8 +138,8 @@ describe "users", :type => :feature do
       it "has no rank buttons" do
         visit "/"
 
-        expect(page).to_not have_button("Go Up")
-        expect(page).to_not have_link("Go Down")
+        expect(page).to_not have_button("#{@omgrr.id}-go-up")
+        expect(page).to_not have_button("#{@omgrr.id}-go-down")
       end
     end
   end

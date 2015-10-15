@@ -13,9 +13,9 @@
   <div class="container main-body">
     <div class="row">
       <% flash.each do |name, msg| -%>
-      <div class="<%= name %>">
-        <p><%= msg %></p>
-      </div>
+        <div class="text-center alert alert-<%= name %>">
+          <p><%= msg %></p>
+        </div>
       <% end -%>
     </div>
 

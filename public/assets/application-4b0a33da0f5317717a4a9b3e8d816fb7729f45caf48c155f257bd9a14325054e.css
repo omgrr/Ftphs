@@ -4,6 +4,7 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
+
 html {
   font-family: sans-serif;
   -webkit-text-size-adjust: 100%;
@@ -263,8 +264,8 @@ th {
 @font-face {
   font-family: 'Glyphicons Halflings';
 
-  src: url('../assets/glyphicons-halflings-regular.eot');
-  src: url('../assets/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('../assets/glyphicons-halflings-regular.woff2') format('woff2'), url('../assets/glyphicons-halflings-regular.woff') format('woff'), url('../assets/glyphicons-halflings-regular.ttf') format('truetype'), url('../assets/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
+  src: url('../fonts/glyphicons-halflings-regular.eot');
+  src: url('../fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('../fonts/glyphicons-halflings-regular.woff2') format('woff2'), url('../fonts/glyphicons-halflings-regular.woff') format('woff'), url('../fonts/glyphicons-halflings-regular.ttf') format('truetype'), url('../fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
 }
 .glyphicon {
   position: relative;
@@ -6798,3 +6799,252 @@ button.close {
   }
 }
 /*# sourceMappingURL=bootstrap.css.map */
+/* line 1, /home/jerwis0731/sde/ftphs/app/assets/stylesheets/hearthstone_ranks.css.scss */
+.rank_25 {
+  height: 100px;
+  width: 85px;
+  background: url(/assets/hs_ranks-c4930a5ca4f2bc4011fce53475af8125e656396bf1ec0147f5dce45feb31f6bb.png) -164px -85px no-repeat;
+  size: 10%;
+}
+
+/* line 8, /home/jerwis0731/sde/ftphs/app/assets/stylesheets/hearthstone_ranks.css.scss */
+.rank_24 {
+  height: 100px;
+  width: 85px;
+  background: url(/assets/hs_ranks-c4930a5ca4f2bc4011fce53475af8125e656396bf1ec0147f5dce45feb31f6bb.png) -288px -85px no-repeat;
+  size: 10%;
+}
+
+/* line 15, /home/jerwis0731/sde/ftphs/app/assets/stylesheets/hearthstone_ranks.css.scss */
+.rank_23 {
+  height: 100px;
+  width: 85px;
+  background: url(/assets/hs_ranks-c4930a5ca4f2bc4011fce53475af8125e656396bf1ec0147f5dce45feb31f6bb.png) -414px -85px no-repeat;
+  size: 10%;
+}
+
+/* line 22, /home/jerwis0731/sde/ftphs/app/assets/stylesheets/hearthstone_ranks.css.scss */
+.rank_22 {
+  height: 100px;
+  width: 85px;
+  background: url(/assets/hs_ranks-c4930a5ca4f2bc4011fce53475af8125e656396bf1ec0147f5dce45feb31f6bb.png) -542px -85px no-repeat;
+  size: 10%;
+}
+
+/* line 29, /home/jerwis0731/sde/ftphs/app/assets/stylesheets/hearthstone_ranks.css.scss */
+.rank_21 {
+  height: 100px;
+  width: 85px;
+  background: url(/assets/hs_ranks-c4930a5ca4f2bc4011fce53475af8125e656396bf1ec0147f5dce45feb31f6bb.png) -674px -85px no-repeat;
+  size: 10%;
+}
+
+/* line 36, /home/jerwis0731/sde/ftphs/app/assets/stylesheets/hearthstone_ranks.css.scss */
+.rank_20 {
+  height: 100px;
+  width: 85px;
+  background: url(/assets/hs_ranks-c4930a5ca4f2bc4011fce53475af8125e656396bf1ec0147f5dce45feb31f6bb.png) -225px -177px no-repeat;
+  size: 10%;
+}
+
+/* line 43, /home/jerwis0731/sde/ftphs/app/assets/stylesheets/hearthstone_ranks.css.scss */
+.rank_19 {
+  height: 100px;
+  width: 85px;
+  background: url(/assets/hs_ranks-c4930a5ca4f2bc4011fce53475af8125e656396bf1ec0147f5dce45feb31f6bb.png) -350px -177px no-repeat;
+  size: 10%;
+}
+
+/* line 50, /home/jerwis0731/sde/ftphs/app/assets/stylesheets/hearthstone_ranks.css.scss */
+.rank_18 {
+  height: 100px;
+  width: 85px;
+  background: url(/assets/hs_ranks-c4930a5ca4f2bc4011fce53475af8125e656396bf1ec0147f5dce45feb31f6bb.png) -477px -177px no-repeat;
+  size: 10%;
+}
+
+/* line 57, /home/jerwis0731/sde/ftphs/app/assets/stylesheets/hearthstone_ranks.css.scss */
+.rank_17 {
+  height: 100px;
+  width: 85px;
+  background: url(/assets/hs_ranks-c4930a5ca4f2bc4011fce53475af8125e656396bf1ec0147f5dce45feb31f6bb.png) -607px -177px no-repeat;
+  size: 10%;
+}
+
+/* line 64, /home/jerwis0731/sde/ftphs/app/assets/stylesheets/hearthstone_ranks.css.scss */
+.rank_16 {
+  height: 100px;
+  width: 85px;
+  background: url(/assets/hs_ranks-c4930a5ca4f2bc4011fce53475af8125e656396bf1ec0147f5dce45feb31f6bb.png) -733px -177px no-repeat;
+  size: 10%;
+}
+
+/* line 71, /home/jerwis0731/sde/ftphs/app/assets/stylesheets/hearthstone_ranks.css.scss */
+.rank_15 {
+  height: 100px;
+  width: 85px;
+  background: url(/assets/hs_ranks-c4930a5ca4f2bc4011fce53475af8125e656396bf1ec0147f5dce45feb31f6bb.png) -164px -265px no-repeat;
+  size: 10%;
+}
+
+/* line 78, /home/jerwis0731/sde/ftphs/app/assets/stylesheets/hearthstone_ranks.css.scss */
+.rank_14 {
+  height: 100px;
+  width: 85px;
+  background: url(/assets/hs_ranks-c4930a5ca4f2bc4011fce53475af8125e656396bf1ec0147f5dce45feb31f6bb.png) -288px -265px no-repeat;
+  size: 10%;
+}
+
+/* line 85, /home/jerwis0731/sde/ftphs/app/assets/stylesheets/hearthstone_ranks.css.scss */
+.rank_13 {
+  height: 100px;
+  width: 85px;
+  background: url(/assets/hs_ranks-c4930a5ca4f2bc4011fce53475af8125e656396bf1ec0147f5dce45feb31f6bb.png) -415px -265px no-repeat;
+  size: 10%;
+}
+
+/* line 92, /home/jerwis0731/sde/ftphs/app/assets/stylesheets/hearthstone_ranks.css.scss */
+.rank_12 {
+  height: 100px;
+  width: 85px;
+  background: url(/assets/hs_ranks-c4930a5ca4f2bc4011fce53475af8125e656396bf1ec0147f5dce45feb31f6bb.png) -542px -265px no-repeat;
+  size: 10%;
+}
+
+/* line 99, /home/jerwis0731/sde/ftphs/app/assets/stylesheets/hearthstone_ranks.css.scss */
+.rank_11 {
+  height: 100px;
+  width: 85px;
+  background: url(/assets/hs_ranks-c4930a5ca4f2bc4011fce53475af8125e656396bf1ec0147f5dce45feb31f6bb.png) -676px -265px no-repeat;
+  size: 10%;
+}
+
+/* line 106, /home/jerwis0731/sde/ftphs/app/assets/stylesheets/hearthstone_ranks.css.scss */
+.rank_10 {
+  height: 100px;
+  width: 85px;
+  background: url(/assets/hs_ranks-c4930a5ca4f2bc4011fce53475af8125e656396bf1ec0147f5dce45feb31f6bb.png) -227px -348px no-repeat;
+  size: 10%;
+}
+
+/* line 113, /home/jerwis0731/sde/ftphs/app/assets/stylesheets/hearthstone_ranks.css.scss */
+.rank_9 {
+  height: 100px;
+  width: 85px;
+  background: url(/assets/hs_ranks-c4930a5ca4f2bc4011fce53475af8125e656396bf1ec0147f5dce45feb31f6bb.png) -351px -347px no-repeat;
+  size: 10%;
+}
+
+/* line 120, /home/jerwis0731/sde/ftphs/app/assets/stylesheets/hearthstone_ranks.css.scss */
+.rank_8 {
+  height: 100px;
+  width: 85px;
+  background: url(/assets/hs_ranks-c4930a5ca4f2bc4011fce53475af8125e656396bf1ec0147f5dce45feb31f6bb.png) -476px -347px no-repeat;
+  size: 10%;
+}
+
+/* line 127, /home/jerwis0731/sde/ftphs/app/assets/stylesheets/hearthstone_ranks.css.scss */
+.rank_7 {
+  height: 100px;
+  width: 85px;
+  background: url(/assets/hs_ranks-c4930a5ca4f2bc4011fce53475af8125e656396bf1ec0147f5dce45feb31f6bb.png) -607px -347px no-repeat;
+  size: 10%;
+}
+
+/* line 134, /home/jerwis0731/sde/ftphs/app/assets/stylesheets/hearthstone_ranks.css.scss */
+.rank_6 {
+  height: 100px;
+  width: 85px;
+  background: url(/assets/hs_ranks-c4930a5ca4f2bc4011fce53475af8125e656396bf1ec0147f5dce45feb31f6bb.png) -734px -345px no-repeat;
+  size: 10%;
+}
+
+/* line 141, /home/jerwis0731/sde/ftphs/app/assets/stylesheets/hearthstone_ranks.css.scss */
+.rank_5 {
+  height: 100px;
+  width: 85px;
+  background: url(/assets/hs_ranks-c4930a5ca4f2bc4011fce53475af8125e656396bf1ec0147f5dce45feb31f6bb.png) -165px -433px no-repeat;
+  size: 10%;
+}
+
+/* line 148, /home/jerwis0731/sde/ftphs/app/assets/stylesheets/hearthstone_ranks.css.scss */
+.rank_4 {
+  height: 100px;
+  width: 85px;
+  background: url(/assets/hs_ranks-c4930a5ca4f2bc4011fce53475af8125e656396bf1ec0147f5dce45feb31f6bb.png) -289px -432px no-repeat;
+  size: 10%;
+}
+
+/* line 155, /home/jerwis0731/sde/ftphs/app/assets/stylesheets/hearthstone_ranks.css.scss */
+.rank_3 {
+  height: 100px;
+  width: 85px;
+  background: url(/assets/hs_ranks-c4930a5ca4f2bc4011fce53475af8125e656396bf1ec0147f5dce45feb31f6bb.png) -414px -432px no-repeat;
+  size: 10%;
+}
+
+/* line 162, /home/jerwis0731/sde/ftphs/app/assets/stylesheets/hearthstone_ranks.css.scss */
+.rank_2 {
+  height: 100px;
+  width: 85px;
+  background: url(/assets/hs_ranks-c4930a5ca4f2bc4011fce53475af8125e656396bf1ec0147f5dce45feb31f6bb.png) -541px -433px no-repeat;
+  size: 10%;
+}
+
+/* line 169, /home/jerwis0731/sde/ftphs/app/assets/stylesheets/hearthstone_ranks.css.scss */
+.rank_1 {
+  height: 100px;
+  width: 85px;
+  background: url(/assets/hs_ranks-c4930a5ca4f2bc4011fce53475af8125e656396bf1ec0147f5dce45feb31f6bb.png) -676px -436px no-repeat;
+  size: 10%;
+}
+/* line 1, /home/jerwis0731/sde/ftphs/app/assets/stylesheets/home.scss */
+.message-pane {
+  height: 500px;
+  overflow-y: scroll;
+}
+
+/* line 6, /home/jerwis0731/sde/ftphs/app/assets/stylesheets/home.scss */
+body {
+  background: url(/assets/hs_background-825ceece525ec57e841bc751e57011b4b188f237171b1107426e5e023fc56f58.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+/* line 14, /home/jerwis0731/sde/ftphs/app/assets/stylesheets/home.scss */
+.progress {
+  background-color: transparent;
+  margin-top: 15px;
+  height: 50px;
+}
+
+/* line 20, /home/jerwis0731/sde/ftphs/app/assets/stylesheets/home.scss */
+.user {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+/* line 25, /home/jerwis0731/sde/ftphs/app/assets/stylesheets/home.scss */
+.user-portrait {
+  background-color: rgba(226, 194, 107, 0.8);
+  padding: 15px;
+  border-radius: 4px;
+}
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+
+
+ */
+

@@ -4,13 +4,21 @@
       <h4 class="text-center"><%= user.name %></h4>
 
       <% if user_signed_in? and current_user == user %>
-        <%= form_tag(go_down_user_path(user)) do %>
-          <%= submit_tag("Go Down", class: "btn") %>
-        <% end %>
+        <div class="col-md-5" style="margin-right:10px;">
+          <%= form_tag(go_down_user_path(user)) do %>
+            <button type="submit" id="<%=user.id%>-go-down" class="btn btn-primary">
+              <span class="glyphicon glyphicon-arrow-down"></span>
+            </button>
+          <% end %>
+        </div>
 
-        <%= form_tag(go_up_user_path(user)) do %>
-          <%= submit_tag("Go Up", class:"btn") %>
-        <% end %>
+        <div class="col-md-5">
+          <%= form_tag(go_up_user_path(user)) do %>
+            <button type="submit" id="<%=user.id%>-go-up" class="btn btn-primary">
+              <span class="glyphicon glyphicon-arrow-up"></span>
+            </button>
+          <% end %>
+        </div>
       <% end %>
     </div>
     <div class="col-md-6">
